@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<x2 namespace="Events.Timer">
+
+  <event name="EventTimerBase" id ="EventTimerTypes.Timer">
+    <property name="Context" type="int32"/>
+  </event> 
+
+  <event name="TimerMatch" id ="EventTimerTypes.TimerMatch" base="EventTimerBase">
+  </event> 
+
+  <event name="TimerCoordinator" id ="EventTimerTypes.TimerCoordinator" base="EventTimerBase">
+  </event> 
+
+</x2>

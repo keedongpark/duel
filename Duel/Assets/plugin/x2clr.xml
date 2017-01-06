@@ -1,0 +1,2896 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>x2clr</name>
+    </assembly>
+    <members>
+        <member name="T:x2.BuiltinEventType">
+            <summary>
+            Event type identifiers for built-in events.
+            </summary>
+        </member>
+        <member name="T:x2.HeartbeatEvent">
+            <summary>
+            x2 subsystem heartbeat event.
+            </summary>
+        </member>
+        <member name="T:x2.FlowStart">
+            <summary>
+            A local event enqueued when a flow starts.
+            </summary>
+        </member>
+        <member name="T:x2.FlowStop">
+            <summary>
+            A local event enqueued when a flow stops.
+            </summary>
+        </member>
+        <member name="T:x2.TimeoutEvent">
+            <summary>
+            A local timeout event.
+            </summary>
+        </member>
+        <member name="P:x2.TimeoutEvent.Key">
+            <summary>
+            Event key object.
+            </summary>
+        </member>
+        <member name="P:x2.TimeoutEvent.IntParam">
+            <summary>
+            Optional integer parameter
+            </summary>
+        </member>
+        <member name="T:x2.Config">
+            <summary>
+            Provides the global configuration properties.
+            </summary>
+        </member>
+        <member name="P:x2.Config.LogLevel">
+            <summary>
+            Gets or sets the minimum log level.
+            </summary>
+        </member>
+        <member name="P:x2.Config.HeartbeatInterval">
+            <summary>
+            Gets or sets the time interval, in seconds, of built-in heartbeat
+            events.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Buffer.SizeExponent.Chunk">
+            <summary>
+            Gets or sets the buffer chunk size exponent n in 2^n.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Buffer.SizeExponent.Segment">
+            <summary>
+            Gets or sets the buffer segment size exponent n in 2^n.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Buffer.ChunkSize">
+            <summary>
+            Gets the buffer chunk size in bytes.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Buffer.SegmentSize">
+            <summary>
+            Gets the buffer segment size in bytes.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Coroutine.MaxWaitHandles">
+            <summary>
+            Gets or sets the maximum number of wait handles.
+            </summary>
+        </member>
+        <member name="P:x2.Config.Coroutine.DefaultTimeout">
+            <summary>
+            Gets or sets the default wait timeout in seconds.
+            </summary>
+        </member>
+        <member name="T:x2.ConstsInfo`1">
+            <summary>
+            Provides the common housekeeping methods for static constants.
+            </summary>
+        </member>
+        <member name="T:x2.EventFactory">
+            <summary>
+            Holds a map of retrievable events and their factory method delegates.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Create(System.Int32)">
+            <summary>
+            Creates a new event instance of the specified type idendifier.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Register``1">
+            <summary>
+            Registers the specified type parameter as a retrievable event.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Register(System.Reflection.Assembly)">
+            <summary>
+            Registers all the Event subclasses in the specified assembly as
+            retrievable events.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Register(System.Reflection.Assembly,System.Type[])">
+            <summary>
+            Registers all the Event classes extending the optionally specified
+            base classes as retrievable events.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Register(System.Type)">
+            <summary>
+            Registers the specified type as a retrievable event.
+            </summary>
+        </member>
+        <member name="M:x2.EventFactory.Register(System.Int32,System.Func{x2.Event})">
+            <summary>
+            Registers a retrievable event type identifier with its factory
+            method.
+            </summary>
+        </member>
+        <member name="T:x2.EventQueue">
+            <summary>
+            Abstract base class for blocking event queue implementations.
+            </summary>
+        </member>
+        <member name="T:x2.InvalidEncodingException">
+            <summary>
+            The exception that is thrown when a data stream is in an invalid format.
+            </summary>
+        </member>
+        <member name="M:x2.InvalidEncodingException.#ctor">
+            <summary>
+            Initializes a new instance of the InvalidEncodingException class.
+            </summary>
+        </member>
+        <member name="M:x2.InvalidEncodingException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the InvalidEncodingException class
+            with the specified error message.
+            </summary>
+        </member>
+        <member name="M:x2.InvalidEncodingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the InvalidEncodingException class
+            with the specified error message and the reference to the inner
+            exception that is the cause of this exception.
+            </summary>
+        </member>
+        <member name="T:x2.OutOfResourceException">
+            <summary>
+            The exception that is thrown when there is not enough resource to
+            fulfill the request.
+            </summary>
+        </member>
+        <member name="M:x2.OutOfResourceException.#ctor">
+            <summary>
+            Initializes a new instance of the OutOfResourceException class.
+            </summary>
+        </member>
+        <member name="M:x2.OutOfResourceException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the OutOfResourceException class with
+            the specified error message.
+            </summary>
+        </member>
+        <member name="M:x2.OutOfResourceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the OutOfResourceException class with
+            the specified error message and the reference to the inner exception
+            that is the cause of this exception.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Concat(System.Byte[],System.Byte[])">
+            <summary>
+            Linq Concat replacement for byte arrays.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.EqualsExtended(System.Byte[],System.Byte[])">
+            <summary>
+            Tests for the sequence equality of the specified byte arrays.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.SubArray(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Specialized SubArray extension method for byte arrays.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.SubArray``1(``0[],System.Int32,System.Int32)">
+            <summary>
+            Returns a new subarray that delimits the specified range of the
+            elements in the specified source array.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForSeconds(x2.Coroutine,System.Double)">
+            <summary>
+            Waits for the specified time in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForSingleEvent(x2.Coroutine,x2.Event)">
+            <summary>
+            Waits for a single event until the default timeout.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForSingleEvent(x2.Coroutine,x2.Event,System.Double)">
+            <summary>
+            Waits for a single event until the specified timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForSingleResponse(x2.Coroutine,x2.Event,x2.Event)">
+            <summary>
+            Posts the request and waits for a single response until default timeout.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForSingleResponse(x2.Coroutine,x2.Event,x2.Event,System.Double)">
+            <summary>
+            Posts the request and waits for a single response until the specified
+            timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForMultipleEvents(x2.Coroutine,x2.Event[])">
+            <summary>
+            Waits for multiple events until the default timeout.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForMultipleEvents(x2.Coroutine,System.Double,x2.Event[])">
+            <summary>
+            Waits for multiple events until the specified timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForMultipleResponses(x2.Coroutine,x2.Event[],x2.Event[])">
+            <summary>
+            Posts the requests and waits for multiple responses until default
+            timeout.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForMultipleResponse(x2.Coroutine,x2.Event[],System.Double,x2.Event[])">
+            <summary>
+            Posts the requests and waits for multiple responses until the
+            specified timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForCompletion(x2.Coroutine,System.Func{x2.Coroutine,System.Collections.IEnumerator})">
+            <summary>
+            Waits for the completion of another coroutine.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForCompletion``1(x2.Coroutine,System.Func{x2.Coroutine,``0,System.Collections.IEnumerator},``0)">
+            <summary>
+            Waits for the completion of another coroutine with a single
+            additional argument.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForCompletion``2(x2.Coroutine,System.Func{x2.Coroutine,``0,``1,System.Collections.IEnumerator},``0,``1)">
+            <summary>
+            Waits for the completion of another coroutine with two additional
+            arguments.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.WaitForCompletion``3(x2.Coroutine,System.Func{x2.Coroutine,``0,``1,``2,System.Collections.IEnumerator},``0,``1,``2)">
+            <summary>
+            Waits for the completion of another coroutine with three additional
+            arguments.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Bind``1(``0,System.Action{``0})">
+            <summary>
+            Alias of Flow.Bind(T, Action(T)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Bind``1(``0,System.Action{``0},System.Predicate{``0})">
+            <summary>
+            Alias of Flow.Bind(T, Action(T), Predicate(T)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Bind``1(``0,System.Func{x2.Coroutine,``0,System.Collections.IEnumerator})">
+            <summary>
+            Alias of Flow.Bind(T, Func(Coroutine, T, IEnumerator)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Bind``1(``0,System.Func{x2.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">
+            <summary>
+            Alias of Flow.Bind(T, Func(Coroutine, T, IEnumerator), Predicate(T)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.InResponseOf``1(``0,x2.Event)">
+            <summary>
+            Indicates that the event is the response of the specified one.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.InChannel``1(``0,System.String)">
+            <summary>
+            Indicates that the event is associated with the specified hub
+            channel.
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Post(x2.Event)">
+            <summary>
+            Alias of Hub.Post(e).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Unbind``1(``0,System.Action{``0})">
+            <summary>
+            Alias of Flow.Unbind(T, Action(T)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Unbind``1(``0,System.Action{``0},System.Predicate{``0})">
+            <summary>
+            Alias of Flow.Unbind(T, Action(T), Predicate(T)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Unbind``1(``0,System.Func{x2.Coroutine,``0,System.Collections.IEnumerator})">
+            <summary>
+            Alias of Flow.Unbind(T, Func(Coroutine, T, IEnumerator)).
+            </summary>
+        </member>
+        <member name="M:x2.Extensions.Unbind``1(``0,System.Func{x2.Coroutine,``0,System.Collections.IEnumerator},System.Predicate{``0})">
+            <summary>
+            Alias of Flow.Unbind(T, Func(Coroutine, T, IEnumerator), Predicate(T)).
+            </summary>
+        </member>
+        <member name="T:x2.Deserializer">
+            <summary>
+            Binary wire format deserializer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.#ctor(x2.Buffer)">
+            <summary>
+            Initializes a new Deserializer object that works on the specified
+            buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Create">
+            <summary>
+            Creates a new event instance, retrieving the type identifier from
+            this deserializer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Boolean@)">
+            <summary>
+            Decodes a boolean value out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Byte@)">
+            <summary>
+            Decodes a single byte out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.SByte@)">
+            <summary>
+            Decodes an 8-bit signed integer out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Int16@)">
+            <summary>
+            Decodes a 16-bit signed integer out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Int32@)">
+            <summary>
+            Decodes a 32-bit signed integer out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.ReadNonnegative(System.Int32@)">
+            <summary>
+            Decodes a 32-bit non-negative integer out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Int64@)">
+            <summary>
+            Decodes a 64-bit signed integer out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Single@)">
+            <summary>
+            Decodes a 32-bit floating-point number out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Double@)">
+            <summary>
+            Decodes a 64-bit floating-point number out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.String@)">
+            <summary>
+            Decodes a text string out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.DateTime@)">
+            <summary>
+            Decodes a datetime value out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Byte[]@)">
+            <summary>
+            Decodes an array of bytes out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Boolean}@)">
+            <summary>
+            Decodes an ordered list of boolean values out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Byte}@)">
+            <summary>
+            Decodes an ordered list of byte values out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.SByte}@)">
+            <summary>
+            Decodes an ordered list of 8-bit signed integers out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Int16}@)">
+            <summary>
+            Decodes an ordered list of 16-bit signed integers out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Int32}@)">
+            <summary>
+            Decodes an ordered list of 32-bit signed integers out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Int64}@)">
+            <summary>
+            Decodes an ordered list of 64-bit signed integers out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Single}@)">
+            <summary>
+            Decodes an ordered list of 32-bit floating-point values out of the
+            underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Double}@)">
+            <summary>
+            Decodes an ordered list of 64-bit floating-point values out of the
+            underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.String}@)">
+            <summary>
+            Decodes an ordered list of text strings out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.DateTime}@)">
+            <summary>
+            Decodes an ordered list of DateTime values out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}}@)">
+            <summary>
+            Decodes an ordered list of Int32 lists out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read``1(System.Collections.Generic.List{``0}@)">
+            <summary>
+            Decodes an ordered list of Cell-derived objects out of the
+            underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.Read``1(``0@)">
+            <summary>
+            Decodes a Cell-derived objects out of the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.ReadFixed(System.Int32@)">
+            <summary>
+            Decodes a 32-bit signed integer by fixed-width big-endian byte order.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.ReadFixed(System.Int64@)">
+            <summary>
+            Decodes a 64-bit signed integer by fixed-width big-endian byte order.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.ReadVariable(System.UInt32@)">
+            <summary>
+            Decodes a 32-bit unsigned integer out of the underlying buffer,
+            with unsigned LEB128 decoding.
+            </summary>
+        </member>
+        <member name="M:x2.Deserializer.ReadVariable(System.UInt64@)">
+            <summary>
+            Decodes a 64-bit unsigned integer out of the underlying buffer,
+            with unsigned LEB128 decoding.
+            </summary>
+        </member>
+        <member name="T:x2.ClientLink">
+            <summary>
+            Common base class for single-session client links.
+            </summary>
+        </member>
+        <member name="P:x2.ClientLink.Session">
+            <summary>
+            Gets the current link session.
+            </summary>
+        </member>
+        <member name="M:x2.ClientLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ClientLink class.
+            </summary>
+        </member>
+        <member name="M:x2.ClientLink.Send(x2.Event)">
+            <summary>
+            Sends out the specified event through this link channel.
+            </summary>
+        </member>
+        <member name="M:x2.ClientLink.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:x2.ClientLink.OnConnectInternal(x2.LinkSession)">
+            <summary>
+            Called by a derived link class on a successful connect. 
+            </summary>
+        </member>
+        <member name="T:x2.ServerLink">
+            <summary>
+            Common base class for multi-session server links.
+            </summary>
+        </member>
+        <member name="F:x2.ServerLink.sessions">
+            <summary>
+            Searchable set of active sessions.
+            </summary>
+        </member>
+        <member name="M:x2.ServerLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ServerLink class.
+            </summary>
+        </member>
+        <member name="M:x2.ServerLink.Broadcast(x2.Event)">
+            <summary>
+            Broadcasts the specified event to all the connected clients.
+            </summary>
+        </member>
+        <member name="M:x2.ServerLink.Send(x2.Event)">
+            <summary>
+            Sends out the specified event through this link channel.
+            </summary>
+        </member>
+        <member name="M:x2.ServerLink.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:x2.ServerLink.OnAcceptInternal(x2.LinkSession)">
+            <summary>
+            Called by a derived link class on a successful accept.
+            </summary>
+        </member>
+        <member name="T:x2.TcpServer">
+            <summary>
+            TCP/IP server link based on the Begin/End pattern.
+            </summary>
+        </member>
+        <member name="M:x2.TcpServer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the TcpServer class.
+            </summary>
+        </member>
+        <member name="M:x2.TcpServer.AcceptInternal">
+            <summary>
+            <see cref="M:x2.AbstractTcpServer.AcceptInternal"/>
+            </summary>
+        </member>
+        <member name="T:x2.TcpSession">
+            <summary>
+            TCP/IP link session based on the Begin/End pattern.
+            </summary>
+        </member>
+        <member name="M:x2.SendBuffer.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:x2.AsyncTcpClient">
+            <summary>
+            TCP/IP client link based on the SocketAsyncEventArgs pattern.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncTcpClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AsyncTcpClient class.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)">
+            <summary>
+            <see cref="M:x2.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)"/>
+            </summary>
+        </member>
+        <member name="T:x2.TcpClient">
+            <summary>
+            TCP/IP client link based on the Begin/End pattern.
+            </summary>
+        </member>
+        <member name="M:x2.TcpClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the TcpClient class.
+            </summary>
+        </member>
+        <member name="M:x2.TcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)">
+            <summary>
+            <see cref="M:x2.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)"/>
+            </summary>
+        </member>
+        <member name="T:x2.AbstractTcpClient">
+            <summary>
+            Abstract base class for TCP/IP client links.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.Connected">
+            <summary>
+            Gets whether this client link is currently connected or not.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.RemoteHost">
+            <summary>
+            Gets or sets the remote host address string to connect to.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.RemotePort">
+            <summary>
+            Gets or sets the remote port number to connect to.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.NoDelay">
+            <summary>
+            Gets or sets a boolean value indicating whether the client sockets
+            are not to use the Nagle algorithm.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.MaxRetryCount">
+            <summary>
+            Gets or sets the maximum number of connection retries before this
+            link declares a connection failure.
+            </summary>
+            <remarks>
+            Default value is 0 (no retry). A negative integer such as -1 means
+            that the link should retry for unlimited times.
+            </remarks>
+        </member>
+        <member name="P:x2.AbstractTcpClient.RetryInterval">
+            <summary>
+            Gets or sets the connection retry interval time in milliseconds.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.AutoReconnect">
+            <summary>
+            Gets or sets a boolean value indicating whether this link should
+            start a new connection attempt automatically on disconnect, toward
+            the previous remote endpoint.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.ReconnectDelay">
+            <summary>
+            Gets or sets a delay before an automatic reconnect, in milliseconds.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.IncomingKeepaliveEnabled">
+            <summary>
+            Gets or sets a boolean value indicating whether this link checks
+            for incomming keepalive events
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.OutgoingKeepaliveEnabled">
+            <summary>
+            Gets or sets a boolean value indicating whether this link emits
+            outgoing keepalive events.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.MaxKeepaliveFailureCount">
+            <summary>
+            Gets or sets the maximum number of successive keepalive failures
+            before the link closes the session.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.IgnoreKeepaliveFailure">
+            <summary>
+            Gets or sets a boolean value indicating whether this link ignores
+            the keepalive failure limit instead of clsoing the session.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.DisconnectOnComplete">
+            <summary>
+            Gets or sets a boolean value indicating whether the connection is to
+            be closed on completion of requested tasks.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpClient.DisconnectDelay">
+            <summary>
+            Gets or sets a length of time, in milliseconds, after which a
+            disconnection is considered when the DisconnectOnComplete is set.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AbstractTcpClient class.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.Connect(System.String,System.Int32)">
+            <summary>
+            Connects to the specified host and port.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.Connect(System.Net.IPAddress,System.Int32)">
+            <summary>
+            Connects to the specified IP address and port.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.ConnectInternal(System.Net.Sockets.Socket,System.Net.EndPoint)">
+            <summary>
+            Provides an actual implementation of Connect.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.OnConnectInternal(x2.LinkSession)">
+            <summary>
+            <see cref="M:x2.ClientLink.OnConnectInternal(x2.LinkSession)"/>
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpClient.OnConnectError(System.Net.Sockets.Socket,System.Net.EndPoint)">
+            <summary>
+            Called by a derived link class when a connection attempt fails.
+            </summary>
+        </member>
+        <member name="T:x2.AbstractTcpSession">
+            <summary>
+            Abstract base class for TCP/IP link sessions.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpSession.SocketConnected">
+            <summary>
+            Gets whether this session is currently connected or not.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpSession.RemoteEndPoint">
+            <summary>
+            Gets the cached remote endpoint of this session, or null.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpSession.Socket">
+            <summary>
+            Gets the underlying Socket object.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpSession.IgnoreKeepaliveFailure">
+            <summary>
+            Gets or sets a boolean value indicating whether this link session
+            ignores keepalive failures.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpSession.#ctor(x2.SessionBasedLink,System.Net.Sockets.Socket)">
+            <summary>
+            Initializes a new instance of the AbstractTcpSession class.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpSession.OnDisconnect">
+            <summary>
+            Called on send/receive error.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpSession.ToString">
+            <summary>
+            Returns a string that represents the current object.
+            </summary>
+        </member>
+        <member name="T:x2.AsyncTcpSession">
+            <summary>
+            TCP/IP link session based on the SocketAsyncEventArgs pattern.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncTcpSession.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:x2.AsyncTcpServer">
+            <summary>
+            TCP/IP server link based on the SocketAsyncEventArgs pattern.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncTcpServer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AsyncTcpServer class.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncTcpServer.AcceptInternal">
+            <summary>
+            <see cref="M:x2.AbstractTcpServer.AcceptInternal"/>
+            </summary>
+        </member>
+        <member name="T:x2.LinkSession">
+            <summary>
+            Abstract base class for concrete link sessions.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.BufferTransform">
+            <summary>
+            Gets or sets the BufferTransform for this link session.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Context">
+            <summary>
+            Gets or sets the context object associated with this link session.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Handle">
+            <summary>
+            Gets or sets the link session handle that is unique in the current
+            process.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Link">
+            <summary>
+            Gets the link associated with this session.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Polarity">
+            <summary>
+            Gets or sets a boolean value indicating whether this session is an
+            active (client) session. A passive (server) session will return false.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Token">
+            <summary>
+            Gets or sets the session token for this session.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Connected">
+            <summary>
+            Gets or sets whether this link session is in connected state or not.
+            </summary>
+        </member>
+        <member name="M:x2.LinkSession.#ctor(x2.SessionBasedLink)">
+            <summary>
+            Initializes a new instance of the LinkSession class.
+            </summary>
+        </member>
+        <member name="M:x2.LinkSession.Close">
+            <summary>
+            Actively closes this link session and releases all the associated
+            resources.
+            </summary>
+        </member>
+        <member name="M:x2.LinkSession.Dispose">
+            <summary>
+            Implements IDisposable interface.
+            </summary>
+        </member>
+        <member name="M:x2.LinkSession.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:x2.LinkSession.Send(x2.Event)">
+            <summary>
+            Sends out the specified event through this link session.
+            </summary>
+        </member>
+        <member name="P:x2.LinkSession.Diag">
+            <summary>
+            Gets or sets the diagnostics object.
+            </summary>
+        </member>
+        <member name="T:x2.LinkSession.Diagnostics">
+            <summary>
+            Link session diagnostics helper class.
+            </summary>
+        </member>
+        <member name="T:x2.SessionBasedLink">
+            <summary>
+            Abstract base class for session-based links.
+            </summary>
+        </member>
+        <member name="P:x2.SessionBasedLink.SessionRecoveryEnabled">
+            <summary>
+            Gets or sets a boolean value inidicating whether this link supports
+            automatic session recovery on instant disconnection.
+            </summary>
+        </member>
+        <member name="P:x2.SessionBasedLink.SessionRecoveryTimeout">
+            <summary>
+            Gets or sets the session recovery timeout (in seconds).
+            </summary>
+        </member>
+        <member name="T:x2.SessionBasedLink.PreprocessEventHandler">
+            <summary>
+            A delegate type for hooking up event proprocess notifications.
+            </summary>
+        </member>
+        <member name="E:x2.SessionBasedLink.Preprocess">
+            <summary>
+            An event that clients can use to be notified whenever a new event is
+            ready for preprocessing.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the SessionBasedLink class.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnLinkSessionConnectedInternal(System.Boolean,System.Object)">
+            <summary>
+            Called internally when a new session creation attempt is completed.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnLinkSessionDisconnectedInternal(System.Int32,System.Object)">
+            <summary>
+            Called internally when an existing link session is closed.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.InitiateHandshake(x2.LinkSession)">
+            <summary>
+            Called by a derived class to initiate a buffer transform handshake.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnSessionConnected(System.Boolean,System.Object)">
+            <summary>
+            Called when a new session creation attempt is completed.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnSessionDisconnected(System.Int32,System.Object)">
+            <summary>
+            Called when an existing link session is closed.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnSessionRecovered(System.Int32,System.Object)">
+            <summary>
+            Called when an existing link session is recovered.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.OnSessionSetup(x2.LinkSession)">
+            <summary>
+            Called when a new link session is ready for open.
+            </summary>
+        </member>
+        <member name="M:x2.SessionBasedLink.SetupInternal">
+            <summary>
+            <see cref="M:x2.Case.SetupInternal"/>
+            </summary>
+        </member>
+        <member name="T:x2.AbstractTcpServer">
+            <summary>
+            Abstract base class for TCP/IP server links.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.Listening">
+            <summary>
+            Gets whether this link is currently listening or not.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.NoDelay">
+            <summary>
+            Gets or sets a boolean value indicating whether the client sockets
+            are not to use the Nagle algorithm.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.IncomingKeepaliveEnabled">
+            <summary>
+            Gets or sets a boolean value indicating whether this link checks
+            for incomming keepalive events
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.OutgoingKeepaliveEnabled">
+            <summary>
+            Gets or sets a boolean value indicating whether this link emits
+            outgoing keepalive events.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.MaxKeepaliveFailureCount">
+            <summary>
+            Gets or sets the maximum number of successive keepalive failures
+            allowed before the link closes the session.
+            </summary>
+        </member>
+        <member name="P:x2.AbstractTcpServer.IgnoreKeepaliveFailure">
+            <summary>
+            Gets or sets a boolean value indicating whether this link ignores
+            keepalive failures.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpServer.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AbstractTcpServer class.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpServer.AcceptInternal">
+            <summary>
+            Provides an actual implementation of Accept.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractTcpServer.OnAcceptInternal(x2.LinkSession)">
+            <summary>
+            <see cref="M:x2.ServerLink.OnAcceptInternal(x2.LinkSession)"/>
+            </summary>
+        </member>
+        <member name="T:x2.AbstractUdpLink">
+            <summary>
+            Abstract base class for non-reliable UDP/IP links.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AbsractUdpLink class.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.Bind(System.Int32)">
+            <summary>
+            Binds the underlying socket with the specified local port.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.Listen">
+            <summary>
+            Begin receiving incoming events on this link.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.AddEndPoint(System.Net.EndPoint)">
+            <summary>
+            Adds the specified remote end point to the known peers, and returns
+            the handle associated with it.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.GetEndPoint(System.Int32)">
+            <summary>
+            Gets the remote end point of the known peer identified by the
+            specified handle.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.GetHandle(System.Net.EndPoint)">
+            <summary>
+            Gets the handle of the known peer associated with the specified
+            remote end point.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.RemoveEndPoint(System.Net.EndPoint)">
+            <summary>
+            Removes the specified remote end point from the known peers.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.RemoveHandle(System.Int32)">
+            <summary>
+            Removes the specified handle from the known peers.
+            </summary>
+        </member>
+        <member name="M:x2.AbstractUdpLink.Send(x2.Event)">
+            <summary>
+            Sends out the specified event to a known peer.
+            </summary>
+        </member>
+        <member name="T:x2.AsyncUdpLink">
+            <summary>
+            Non-reliable UDP/IP link based on the SocketAsyncEventArgs pattern.
+            </summary>
+        </member>
+        <member name="M:x2.AsyncUdpLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the AsyncUdpLink class.
+            </summary>
+        </member>
+        <member name="T:x2.UdpLink">
+            <summary>
+            Non-reliable UDP/IP link based on the Begin/End pattern.
+            </summary>
+        </member>
+        <member name="M:x2.UdpLink.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the UdpLink class.
+            </summary>
+        </member>
+        <member name="T:x2.SynchronizedEventQueue">
+            <summary>
+            Unbounded event queue based on lock and Monitor Wait/Pulse.
+            </summary>
+        </member>
+        <member name="T:x2.Scope">
+            <summary>
+            Helps code block scope based cleanup.
+            </summary>
+        </member>
+        <member name="P:x2.Scope.BinderToken">
+            <summary>
+            Gets or sets the binder token to be recovered on disposal.
+            </summary>
+        </member>
+        <member name="P:x2.Scope.Event">
+            <summary>
+            Gets the event to be posted on disposal.
+            </summary>
+        </member>
+        <member name="T:x2.Scope.CleanupHandler">
+            <summary>
+            A delegate type for hooking up Dispose notifications.
+            </summary>
+        </member>
+        <member name="E:x2.Scope.Cleanup">
+            <summary>
+            An event that clients can bind custom actions to be executed when
+            this Scope object is disposed.
+            </summary>
+        </member>
+        <member name="M:x2.Scope.#ctor">
+            <summary>
+            Initializes a new Scope object.
+            </summary>
+        </member>
+        <member name="M:x2.Scope.#ctor(x2.Event)">
+            <summary>
+            Initializes a new Scope object with the specified event.
+            </summary>
+        </member>
+        <member name="M:x2.Scope.Dispose">
+            <summary>
+            Implements IDisposable interface.
+            </summary>
+        </member>
+        <member name="T:x2.Serializer">
+            <summary>
+            Binary wire format serializer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Boolean)">
+            <summary>
+            Gets the number of bytes required to encode the specified boolean
+            value.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Byte)">
+            <summary>
+            Gets the number of bytes required to encode the specified single
+            byte.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.SByte)">
+            <summary>
+            Gets the number of bytes required to encode the specified 8-bit
+            signed integer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Int16)">
+            <summary>
+            Gets the number of bytes required to encode the specified 16-bit
+            signed integer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Int32)">
+            <summary>
+            Gets the number of bytes required to encode the specified 32-bit
+            signed integer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Int64)">
+            <summary>
+            Gets the number of bytes required to encode the specified 64-bit
+            signed integer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Single)">
+            <summary>
+            Gets the number of bytes required to encode the specified 32-bit
+            floating-point number.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Double)">
+            <summary>
+            Gets the number of bytes required to encode the specified 64-bit
+            floating-point number.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.String)">
+            <summary>
+            Gets the number of bytes required to encode the specified text
+            string.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLengthUTF8(System.String)">
+            <summary>
+            Gets the number of bytes required to encode the specified text
+            string with UTF-8 encoding.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.DateTime)">
+            <summary>
+            Gets the number of bytes required to encode the specified datetime
+            value.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Byte[])">
+            <summary>
+            Gets the number of bytes required to encode the specified array of
+            bytes.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Boolean})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of boolean values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of byte values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.SByte})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of 8-bit signed integers.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Int16})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of 16-bit signed integers.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of Int32 values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Int64})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of Int64 values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Single})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of 32-bit floating-point values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Double})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of 64-bit floating-point values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.String})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of text strings.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of DateTime values.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of Int32 lists.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Gets the number of bytes required to encode the specified ordered
+            list of Cell-derived objects.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLength``1(``0)">
+            <summary>
+            Gets the number of bytes required to encode the specified
+            Cell-derived object.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLengthVariable(System.UInt32)">
+            <summary>
+            Gets the number of bytes required to encode the specified 32-bit
+            unsigned integer with unsigned LEB128 encoding.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLengthVariable(System.UInt64)">
+            <summary>
+            Gets the number of bytes required to encode the specified 64-bit
+            unsigned integer with unsigned LEB128 encoding.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.GetLengthVariableNonnegative(System.Int32)">
+            <summary>
+            Gets the number of bytes required to encode the specified 32-bit
+            non-negative integer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Boolean)">
+            <summary>
+            Encodes a boolean value into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Byte)">
+            <summary>
+            Encodes a single byte into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.SByte)">
+            <summary>
+            Encodes an 8-bit signed integer into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Int16)">
+            <summary>
+            Encodes a 16-bit signed integer into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Int32)">
+            <summary>
+            Encodes a 32-bit signed integer into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Int64)">
+            <summary>
+            Encodes a 64-bit signed integer into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Single)">
+            <summary>
+            Encodes a 32-bit floating-point number into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Double)">
+            <summary>
+            Encodes a 64-bit floating-point number into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.String)">
+            <summary>
+            Encodes a text string into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.DateTime)">
+            <summary>
+            Encodes a datetime value into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Byte[])">
+            <summary>
+            Encodes an array of bytes into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Boolean})">
+            <summary>
+            Encodes an ordered list of boolean values into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Byte})">
+            <summary>
+            Encodes an ordered list of byte values into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.SByte})">
+            <summary>
+            Encodes an ordered list of 8-bit signed integers into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Int16})">
+            <summary>
+            Encodes an ordered list of 16-bit signed integers into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Encodes an ordered list of 32-bit signed integers into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Int64})">
+            <summary>
+            Encodes an ordered list of 64-bit signed integers values into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Single})">
+            <summary>
+            Encodes an ordered list of 32-bit floating-point values into the
+            underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Double})">
+            <summary>
+            Encodes an ordered list of 64-bit floating-point values into the
+            underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.String})">
+            <summary>
+            Encodes an ordered list of text strings into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.DateTime})">
+            <summary>
+            Encodes an ordered list of DateTime values into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write(System.Collections.Generic.List{System.Collections.Generic.List{System.Int32}})">
+            <summary>
+            Encodes an ordered list of Int32 lists into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Encodes an ordered list of Cell-derived objects into the underlying
+            buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.Write``1(``0)">
+            <summary>
+            Encodes a Cell-derived objects into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.WriteFixed(System.Int32)">
+            <summary>
+            Encodes a 32-bit signed integer into the underlying buffer,
+            by fixed-width big-endian byte order.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.WriteFixed(System.Int64)">
+            <summary>
+            Encodes a 64-bit signed integer into the underlying buffer,
+            by fixed-width big-endian byte order.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.WriteVariable(System.UInt32)">
+            <summary>
+            Encodes a 32-bit unsigned integer into the underlying buffer,
+            with unsigned LEB128 encoding.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.WriteVariable(System.UInt64)">
+            <summary>
+            Encodes a 64-bit unsigned integer into the underlying buffer,
+            with unsigned LEB128 encoding.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.WriteVariableNonnegative(System.Int32)">
+            <summary>
+            Encodes a 32-bit non-negative integer into the underlying buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Serializer.#ctor(x2.Buffer)">
+            <summary>
+            Initializes a new Serializer object that works on the specified
+            buffer.
+            </summary>
+        </member>
+        <member name="M:x2.IBufferTransform.Transform(x2.Buffer,System.Int32)">
+            <summary>
+            Transform the specified trailing byte(s) of the buffer.
+            </summary>
+        </member>
+        <member name="M:x2.IBufferTransform.InverseTransform(x2.Buffer,System.Int32)">
+            <summary>
+            Inverse transform the specified leading byte(s) of the buffer.
+            </summary>
+        </member>
+        <member name="T:x2.Yield">
+            <summary>
+            This thin wrapper of IEnumerator serves as an iterator on which x2
+            coroutine works.
+            </summary>
+        </member>
+        <member name="T:x2.Coroutine">
+            <summary>
+            Provides the core programming interface for x2 coroutines.
+            </summary>
+        </member>
+        <member name="T:x2.EventBasedFlow`1">
+            <summary>
+            Abstract base class for event-based (waiting) execution flows.
+            </summary>
+        </member>
+        <member name="T:x2.Time">
+            <summary>
+            Utility class to handle time information within a frame-based flow.
+            </summary>
+        </member>
+        <member name="P:x2.Time.DeltaTicks">
+            <summary>
+            Gets the number of ticks it took to complete the last frame.
+            </summary>
+        </member>
+        <member name="P:x2.Time.DeltaTime">
+            <summary>
+            Gets the time in seconds it took to complete the last frame.
+            </summary>
+        </member>
+        <member name="P:x2.Time.CurrentTicks">
+            <summary>
+            Number of ticks representing the start UTC DateTime of the current frame.
+            </summary>
+        </member>
+        <member name="P:x2.Time.Now">
+            <summary>
+            Gets the start local DateTime of the current frame.
+            </summary>
+        </member>
+        <member name="P:x2.Time.UtcNow">
+            <summary>
+            Gets the start UTC DateTime of the current frame.
+            </summary>
+        </member>
+        <member name="T:x2.FrameBasedFlow`1">
+            <summary>
+            Abstract base class for frame-based (looping) execution flows.
+            </summary>
+        </member>
+        <member name="T:x2.StringSerializer">
+            <summary>
+            Default text string serializer.
+            </summary>
+        </member>
+        <member name="T:x2.BlockCipher">
+            <summary>
+            A simple example of BufferTransform that performs block encryption and
+            decryption based on the keys exchanged by an asymmetric algorithm.
+            </summary>
+            <remarks>
+            Illustration purpose only. Do NOT use this as is in production.
+            </remarks>
+        </member>
+        <member name="T:x2.Inverse">
+            <summary>
+            A trivial example of BufferTransform that just invert every bit.
+            </summary>
+        </member>
+        <member name="T:x2.Segment">
+            <summary>
+            A reduced form of the ArraySegment(byte) struct, assuming a known
+            constant count value.
+            </summary>
+        </member>
+        <member name="P:x2.Segment.Array">
+            <summary>
+            Gets the backing byte array containing the range of bytes that this
+            segment delimits.
+            </summary>
+        </member>
+        <member name="P:x2.Segment.Offset">
+            <summary>
+            Gets the position of the first byte in the range delimited by this
+            segment, relative to the start of the backing byte array.
+            </summary>
+        </member>
+        <member name="M:x2.Segment.#ctor(System.Byte[],System.Int32)">
+            <summary>
+            Initializes a new instance of the Segment structure that delimits
+            the specified range of the bytes in the specified byte array.
+            </summary>
+        </member>
+        <member name="T:x2.SegmentedBuffer">
+            <summary>
+            Manages a single large buffer block as if it's a pool of smaller segments.
+            </summary>
+        </member>
+        <member name="M:x2.SegmentedBuffer.#ctor">
+            <summary>
+            Initializes a new instance of the SegmentedBuffer class.
+            </summary>
+        </member>
+        <member name="M:x2.SegmentedBuffer.Acquire(x2.Segment@)">
+            <summary>
+            Tries to acquire an available buffer segment.
+            </summary>
+            <returns>true if successful, false if there is no available segment.
+            </returns>
+        </member>
+        <member name="M:x2.SegmentedBuffer.Release(x2.Segment)">
+            <summary>
+            Tries to return the specified segment back to the pool.
+            </summary>
+            <returns>true if successful, false if the specified segment does not
+            belong to this pool.</returns>
+        </member>
+        <member name="T:x2.SegmentPool">
+            <summary>
+            Manages a pool of fixed-length (2^n) byte array segments.
+            </summary>
+        </member>
+        <member name="M:x2.SegmentPool.Acquire">
+            <summary>
+            Acquires an avilable segment from the pool.
+            </summary>
+        </member>
+        <member name="M:x2.SegmentPool.Release(x2.Segment)">
+            <summary>
+            Returns the specified segment back to the pool.
+            </summary>
+        </member>
+        <member name="T:x2.IIndexable`1">
+            <summary>
+            Represents a read-only collection in which each item of type T can be
+            accessed with an integer index.
+            </summary>
+        </member>
+        <member name="P:x2.IIndexable`1.Length">
+            <summary>
+            Gets the length of this collection.
+            </summary>
+        </member>
+        <member name="P:x2.IIndexable`1.Item(System.Int32)">
+            <summary>
+            Gets the value of the item at the specified index.
+            </summary>
+        </member>
+        <member name="T:x2.Capo`1">
+            <summary>
+            Provides an offset-based indexer for the underlying IIndexable(T) object.
+            </summary>
+        </member>
+        <member name="P:x2.Capo`1.Length">
+            <summary>
+            Gets the effective length of this offset-based window.
+            </summary>
+        </member>
+        <member name="M:x2.Capo`1.#ctor(x2.IIndexable{`0},System.Int32)">
+            <summary>
+            Initializes a new Capo(T) value with the specified underlying
+            IIndexable(T) object and the base offset.
+            </summary>
+        </member>
+        <member name="P:x2.Capo`1.Item(System.Int32)">
+            <summary>
+            Gets the value of the item at the actual index of (offset + index).
+            </summary>
+        </member>
+        <member name="T:x2.Getopt">
+            <summary>Getopt is a clone of the GNU C getopt.</summary>
+        </member>
+        <member name="F:x2.Getopt.NoArgument">
+            <summary>Indicates that the option does not take an argument.</summary>
+        </member>
+        <member name="F:x2.Getopt.RequiredArgument">
+            <summary>Indicates that the option requires an argument.</summary>
+        </member>
+        <member name="F:x2.Getopt.OptionalArgument">
+            <summary>Indicates that the option takes an optional argument.</summary>
+        </member>
+        <member name="P:x2.Getopt.Opt">
+            <summary>
+            Returns the last option character.
+            </summary>
+            <remarks>
+            This enables the following usage:
+            <code>
+               while (getopt.Next() != -1) {
+                 int c = getopt.Opt;
+                 ...
+               }
+            </code>
+            </remarks>
+        </member>
+        <member name="P:x2.Getopt.OptArg">
+            <summary>
+            Gets the value of the option argument, for those options that accept an
+            argument.
+            </summary>
+        </member>
+        <member name="P:x2.Getopt.OptInd">
+            <summary>
+            Gets the index of the next element to be processed in args.
+            </summary>
+            <remarks>
+            <para>
+            The initial value is 0. Unlike C getopt, optind is a read-only property
+            of Getopt, and you should use Reset() method in order to prepare Getopt
+            for a new scanning, instead of resetting optind directly.
+            </para>
+            <para>
+            Once Getopt has processed all the options, you can use optind to determine
+            where the remaining non-options begin in args.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:x2.Getopt.OptOpt">
+            <summary>
+            Gets the option character, when Getopt encounters an unknown option
+            character or an option without a required argument.
+            </summary>
+        </member>
+        <member name="P:x2.Getopt.OptErr">
+            <summary>
+            Gets or sets whether Getopt would print out error messages or not.
+            </summary>
+            <remarks>
+            <para>
+            If opterr is true (default), then Getopt prints an error message to the
+            standard error stream if it encounters an unknown option or an option
+            without a required argument.
+            </para>
+            <para>
+            If you set opterr to false, Getopt does not print any messages, but it
+            still returns the character '?' to indicate an error.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:x2.Getopt.LongIndex">
+            <summary>
+            Gets the index of the log option relative to longopts.
+            </summary>
+            <remarks>
+            A negative integer means that there is no long option matched.
+            </remarks>
+        </member>
+        <member name="P:x2.Getopt.LongOnly">
+            <summary>
+            Gets or sets whether this Getopt would run in long_only mode.
+            </summary>
+            <remarks>
+            <para>It's false by default.</para>
+            <para>
+            If long_only is true, '-' as well as '--' can indicate a long option.
+            If an option that starts with '-' (not '--') matches a short option, not
+            a long option, then it is parsed as a short option.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:x2.Getopt.Next">
+            <summary>
+            Returns the next option character.
+            </summary>
+            <remarks>
+            When no more option is available, it returns -1. There may still be more
+            non-options remaining.
+            </remarks>
+        </member>
+        <member name="T:x2.Hash">
+            <summary>
+            Utility struct for hash code generation.
+            </summary>
+            <remarks>Be aware that this struct is mutable.</remarks>
+        </member>
+        <member name="F:x2.Hash.Seed">
+            <summary>
+            Default hash seed value.
+            </summary>
+        </member>
+        <member name="F:x2.Hash.Code">
+            <summary>
+            The hash code value in this instance.
+            </summary>
+        </member>
+        <member name="M:x2.Hash.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the Hash structure with the specified
+            seed value.
+            </summary>
+        </member>
+        <member name="T:x2.LogLevel">
+            <summary>
+            Specifies the log level.
+            </summary>
+        </member>
+        <member name="T:x2.LogHandler">
+            <summary>
+            Represents the method that handles log calls.
+            </summary>
+        </member>
+        <member name="T:x2.Log">
+            <summary>
+            Represents the logging helper class.
+            </summary>
+        </member>
+        <member name="P:x2.Log.Handler">
+            <summary>
+            Gets or sets the application-provided log handler.
+            </summary>
+        </member>
+        <member name="T:x2.RangedIntPool">
+            <summary>
+            Compact pool of consecutive integer values in a finite range.
+            </summary>
+        </member>
+        <member name="P:x2.RangedIntPool.Length">
+            <summary>
+            Gets the number of consecutive integers handled by this pool.
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the RangedIntPool class, containing
+            integers of range [0, maxValue].
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the RangedIntPool class with the
+            specified circulation behavior, containing integers of range
+            [0, maxValue].
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the RangedIntPool class, containing
+            integers of range [minValue, maxValue].
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.#ctor(System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the RangedIntPool class with the
+            specified circulation behavior, containing integers of range
+            [minValue, maxValue].
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.Acquire">
+            <summary>
+            Gets the next available value from the pool.
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.Claim(System.Int32)">
+            <summary>
+            Marks the specified value as used in the pool.
+            </summary>
+        </member>
+        <member name="M:x2.RangedIntPool.Release(System.Int32)">
+            <summary>
+            Returns the specified value to the pool.
+            </summary>
+        </member>
+        <member name="T:x2.Pool`1">
+            <summary>
+            Thread-safe minimal generic object pool.
+            </summary>
+        </member>
+        <member name="P:x2.Pool`1.Capacity">
+            <summary>
+            Gets or sets the maximum number of objects that can be contained in
+            the pool.
+            </summary>
+        </member>
+        <member name="P:x2.Pool`1.Count">
+            <summary>
+            Gets the number of objects contained in the pool.
+            </summary>
+        </member>
+        <member name="M:x2.Pool`1.#ctor">
+            <summary>
+            Initializes a new instance of the Pool(T) class, without a capacity
+            limit.
+            </summary>
+        </member>
+        <member name="M:x2.Pool`1.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the Pool(T) class, with the specified
+            maximum capacity.
+            </summary>
+        </member>
+        <member name="M:x2.Pool`1.Pop">
+            <summary>
+            Tries to pop an object out of the pool.
+            </summary>
+            <returns>
+            The object removed from the pool, or null if the pool is empty.
+            </returns>
+        </member>
+        <member name="M:x2.Pool`1.Push(`0)">
+            <summary>
+            Tries to push the specified object into the pool.
+            </summary>
+            <remarks>
+            If the pool has a non-zero capacity limit, the object may be dropped
+            when the number of pooled objects reaches the capacity.
+            </remarks>
+        </member>
+        <member name="T:x2.ReadLock">
+            <summary>
+            Provides a disposable read lock.
+            </summary>
+        </member>
+        <member name="M:x2.ReadLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the ReadLock class to acquire a read
+            lock based on the specified ReaderWriterLockSlim object.
+            </summary>
+        </member>
+        <member name="M:x2.ReadLock.Dispose">
+            <summary>
+            Releases the read lock held by this object.
+            </summary>
+        </member>
+        <member name="T:x2.UpgradeableReadLock">
+            <summary>
+            Provides a disposable read lock that is upgradable.
+            </summary>
+        </member>
+        <member name="M:x2.UpgradeableReadLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the UpgradeableReadLock class to
+            acquire an upgradeable read lock based on the specified
+            ReaderWriterLockSlim object.
+            </summary>
+        </member>
+        <member name="M:x2.UpgradeableReadLock.Dispose">
+            <summary>
+            Releases the upgradeable read lock held by this object.
+            </summary>
+        </member>
+        <member name="T:x2.WriteLock">
+            <summary>
+            Provides a disposable write lock.
+            </summary>
+        </member>
+        <member name="M:x2.WriteLock.#ctor(System.Threading.ReaderWriterLockSlim)">
+            <summary>
+            Initializes a new instance of the WriteLock class to acquire a write
+            lock based on the specified ReaderWriterLockSlim object.
+            </summary>
+        </member>
+        <member name="M:x2.WriteLock.Dispose">
+            <summary>
+            Releases the write lock held by this object.
+            </summary>
+        </member>
+        <member name="T:x2.VerboseDeserializer">
+            <summary>
+            Defines methods to read name-value pairs out of the backing object.
+            </summary>
+        </member>
+        <member name="T:x2.VerboseSerializer">
+            <summary>
+            Defines methods to write name-value pairs into the backing object.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForMultipleEvents">
+            <summary>
+            YieldInstruction that waits for multiple events.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForMultipleResponses">
+            <summary>
+            YieldInstruction that posts requests and waits for multiple responses.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForCompletion">
+            <summary>
+            YieldInstruction that waits for the completion of another coroutine.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForCompletion`1">
+            <summary>
+            YieldInstruction that waits for the completion of another coroutine with
+            a single additional argument.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForCompletion`2">
+            <summary>
+            YieldInstruction that waits for the completion of another coroutine with
+            two additional arguments.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForCompletion`3">
+            <summary>
+            YieldInstruction that waits for the completion of another coroutine with
+            three additional arguments.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForSeconds">
+            <summary>
+            YieldInstruction that waits for the specified time in seconds.
+            </summary>
+        </member>
+        <member name="P:x2.TimeFlow.Default">
+            <summary>
+            Gets the default(anonymous) TimeFlow.
+            </summary>
+        </member>
+        <member name="M:x2.TimeFlow.Create(System.String)">
+            <summary>
+            Creates a named TimeFlow.
+            </summary>
+        </member>
+        <member name="M:x2.TimeFlow.Get">
+            <summary>
+            Gets the default(anonymous) TimeFlow.
+            </summary>
+        </member>
+        <member name="M:x2.TimeFlow.Get(System.String)">
+            <summary>
+            Gets the named TimeFlow.
+            </summary>
+        </member>
+        <member name="T:x2.Link">
+            <summary>
+            Common abstract base class for link cases.
+            </summary>
+        </member>
+        <member name="P:x2.Link.BufferTransform">
+            <summary>
+            Gets or sets the BufferTransform for this link.
+            </summary>
+        </member>
+        <member name="P:x2.Link.Name">
+            <summary>
+            Gets the name of this link.
+            </summary>
+        </member>
+        <member name="M:x2.Link.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Link class.
+            </summary>
+        </member>
+        <member name="M:x2.Link.Close">
+            <summary>
+            Closes this link and releases all the associated resources.
+            </summary>
+        </member>
+        <member name="M:x2.Link.Send(x2.Event)">
+            <summary>
+            Sends out the specified event through this link channel.
+            </summary>
+        </member>
+        <member name="M:x2.Link.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:x2.Link.TeardownInternal">
+            <summary>
+            <see cref="M:x2.Case.TeardownInternal"/>
+            </summary>
+        </member>
+        <member name="P:x2.Link.Diag">
+            <summary>
+            Gets or sets the diagnostics object.
+            </summary>
+        </member>
+        <member name="T:x2.Link.Diagnostics">
+            <summary>
+            Link diagnostics helper class.
+            </summary>
+        </member>
+        <member name="T:x2.Binder">
+            <summary>
+            Manages evnet-handler bindings.
+            </summary>
+        </member>
+        <member name="P:x2.Binder.Diag">
+            <summary>
+            Gets the diagnostics object.
+            </summary>
+        </member>
+        <member name="T:x2.Binder.Diagnostics">
+            <summary>
+            Internal diagnostics helper class.
+            </summary>
+        </member>
+        <member name="T:x2.Slot">
+            <summary>
+            Extends Fingerprint class to hold an additional reference count.
+            </summary>
+        </member>
+        <member name="M:x2.Slot.#ctor(x2.Fingerprint)">
+            <summary>
+            Initializes a new instance of the Slot class that contains bit values
+            copied from the specified Fingerprint.
+            </summary>
+            <param name="fingerprint">A Fingerprint object to copy from.</param>
+        </member>
+        <member name="M:x2.Slot.CompareTo(x2.Slot)">
+            <summary>
+            Compares this Slot with the specified Slot object.
+            </summary>
+            Implements IComparable(T).CompareTo interface.
+            <param name="other">
+            A Slot object to be compared with this.
+            </param>
+            <returns>
+            A value that indicates the relative order of the Slot objects being
+            compared. Zero return value means that this is equal to <c>other</c>,
+            while negative(positive) integer return value means that this is
+            less(greater) than <c>other</c>.
+            </returns>
+        </member>
+        <member name="T:x2.Buffer">
+            <summary>
+            A variable-length byte buffer class whose capacity is limited to a
+            multiple of a power of 2.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.BlockSize">
+            <summary>
+            Gets the block size in bytes.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.Capacity">
+            <summary>
+            Gets the maximum capacity of the buffer.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.IsEmpty">
+            <summary>
+            Checks whether the buffer is empty (i.e. whether its length is 0).
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.Length">
+            <summary>
+            Gets the length of the buffered bytes.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.Position">
+            <summary>
+            Gets or sets the current zero-based position.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.FirstSegment">
+            <summary>
+            Gets the first segment of this buffer.
+            </summary>
+        </member>
+        <member name="M:x2.Buffer.#ctor">
+            <summary>
+            Initializes a new instance of the Buffer class.
+            </summary>
+        </member>
+        <member name="M:x2.Buffer.Finalize">
+            <summary>
+            Destructor to return blocks to the pool
+            </summary>
+        </member>
+        <member name="M:x2.Buffer.Dispose">
+            <summary>
+            Implments IDisposable interface.
+            </summary>
+        </member>
+        <member name="M:x2.Buffer.Rewind">
+            <summary>
+            Alias of (Position = 0).
+            </summary>
+        </member>
+        <member name="M:x2.Buffer.ToArray">
+            <summary>
+            Returns a byte array containing all the bytes in this buffer.
+            </summary>
+        </member>
+        <member name="P:x2.Buffer.Item(System.Int32)">
+            <summary>
+            Gets or sets the byte at the specified index.
+            </summary>
+        </member>
+        <member name="T:x2.ICase">
+            <summary>
+            Defines methods to initialize/finalize a case. 
+            </summary>
+        </member>
+        <member name="M:x2.ICase.Setup(x2.Flow)">
+            <summary>
+            Initializes this case with the specified holding flow.
+            </summary>
+        </member>
+        <member name="M:x2.ICase.Teardown(x2.Flow)">
+            <summary>
+            Cleans up this case with the specified holding flow.
+            </summary>
+        </member>
+        <member name="T:x2.Case">
+            <summary>
+            Represents a finite set of application logic.
+            </summary>
+        </member>
+        <member name="M:x2.Case.Setup(x2.Flow)">
+            <summary>
+            <see cref="M:x2.ICase.Setup(x2.Flow)"/>
+            </summary>
+        </member>
+        <member name="M:x2.Case.Teardown(x2.Flow)">
+            <summary>
+            <see cref="M:x2.ICase.Teardown(x2.Flow)"/>
+            </summary>
+        </member>
+        <member name="M:x2.Case.Setup">
+            <summary>
+            Overridden by subclasses to build a initialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Case.SetupInternal">
+            <summary>
+            Called internally when this case is initialized.
+            </summary>
+        </member>
+        <member name="M:x2.Case.Teardown">
+            <summary>
+            Overridden by subclasses to build a cleanup chain.
+            </summary>
+        </member>
+        <member name="M:x2.Case.TeardownInternal">
+            <summary>
+            Called internally when this case is cleaned up.
+            </summary>
+        </member>
+        <member name="T:x2.Cell">
+            <summary>
+            Common base class for all custom types.
+            </summary>
+        </member>
+        <member name="F:x2.Cell.tag">
+            <summary>
+            Per-class type tag to support custom type hierarchy.
+            </summary>
+        </member>
+        <member name="F:x2.Cell.fingerprint">
+            <summary>
+            Fingerprint to keep track of property assignment status.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.#ctor(System.Int32)">
+            <summary>
+            Initializes a new Cell instance with the given fingerprint length.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to this one.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.EqualsTo(x2.Cell)">
+            <summary>
+            Overridden by subclasses to build an equality test chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Equivalent(x2.Cell)">
+            <summary>
+            Determines whether the specified Cell object is equivalent to this
+            one.
+            </summary>
+            A Cell is said to be equivalent to the other if its fingerprint is
+            equivalent to the other's, and all the fingerprinted properties of
+            the other exactly matches with their counterparts.
+            <remarks>
+            Given two Cell objects x and y, x.Equivalent(y) returns true if:
+              <list type="bullet">
+                <item>x.fingerprint.Equivalent(y.fingerprint) returns true.
+                </item>
+                <item>All the fingerprinted properties in x are equal to those
+                in y.</item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:x2.Cell.Equivalent(x2.Cell,x2.Fingerprint)">
+            <summary>
+            Determines whether the specified Cell object is equivalent to this
+            one based on the given fingerprint.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.GetFingerprint">
+            <summary>
+            Gets the fingerprint of this cell.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.GetHashCode">
+            <summary>
+            Returns the hash code for the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.GetHashCode(x2.Fingerprint)">
+            <summary>
+            Overridden by subclasses to build a hash code generator chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.GetTypeTag">
+            <summary>
+            Returns the custom type tag of this cell.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.IsEquivalent(x2.Cell,x2.Fingerprint)">
+            <summary>
+            Overridden by subclasses to build an equivalence test chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.IsKindOf(x2.Cell)">
+            <summary>
+            Determines whether this Cell object is a kind of the specified Cell
+            in the custom type hierarchy.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.SetFingerprint(x2.Fingerprint)">
+            <summary>
+            Sets the fingerprint of this cell as the specified one.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.ToString">
+            <summary>
+            Returns a string that describes the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Describe(System.Text.StringBuilder)">
+            <summary>
+            Overridden by subclasses to build a ToString chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Deserialize(x2.Deserializer)">
+            <summary>
+            Overridden by subclasses to build a deserialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Deserialize(x2.VerboseDeserializer)">
+            <summary>
+            Overridden by subclasses to build a verbose deserialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.GetLength(System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build an encoded length computation chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Serialize(x2.Serializer,System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build a serialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Serialize(x2.VerboseSerializer,System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build a verbose serialization chain.
+            </summary>
+        </member>
+        <member name="T:x2.Cell.Tag">
+            <summary>
+            Supports light-weight custom type hierarchy for Cell and its subclasses.
+            </summary>
+        </member>
+        <member name="P:x2.Cell.Tag.Base">
+            <summary>
+            Gets the immediate base type tag.
+            </summary>
+            Returns null if this is a root tag.
+        </member>
+        <member name="P:x2.Cell.Tag.RuntimeType">
+            <summary>
+            Gets the correspondent runtime type.
+            </summary>
+        </member>
+        <member name="P:x2.Cell.Tag.NumProps">
+            <summary>
+            Gets the number of immediate (directly defined) properties in this type.
+            </summary>
+        </member>
+        <member name="P:x2.Cell.Tag.Offset">
+            <summary>
+            Gets the fingerprint offset for immediate properties in this type.
+            </summary>
+        </member>
+        <member name="M:x2.Cell.Tag.#ctor(x2.Cell.Tag,System.Type,System.Int32)">
+            <summary>
+            Initializes a new instance of the Cell.Tag class.
+            </summary>
+        </member>
+        <member name="T:x2.Event">
+            <summary>
+            Common base class for all events.
+            </summary>
+        </member>
+        <member name="F:x2.Event.tag">
+            <summary>
+            Per-class type tag to support custom type hierarchy.
+            </summary>
+        </member>
+        <member name="P:x2.Event._Channel">
+            <summary>
+            Gets or sets the name of the hub channel which this event is
+            assigned to.
+            </summary>
+        </member>
+        <member name="P:x2.Event._Handle">
+            <summary>
+            Gets or sets the link session handle associated with this event.
+            </summary>
+        </member>
+        <member name="P:x2.Event._Transform">
+            <summary>
+            Gets or sets a boolean value indicating whether this event is to be
+            transformed or not when it is transferred through a link.
+            </summary>
+        </member>
+        <member name="P:x2.Event._WaitHandle">
+            <summary>
+            Gets or sets the coroutine wait handle associated with this event.
+            </summary>
+        </member>
+        <member name="M:x2.Event.#ctor">
+            <summary>
+            Initializes a new instance of the Event class.
+            </summary>
+        </member>
+        <member name="M:x2.Event.#ctor(System.Int32)">
+            <summary>
+            Initializes a new Event instance with the given fingerprint length.
+            </summary>
+        </member>
+        <member name="M:x2.Event.New">
+            <summary>
+            Creates a new instance of the Event class.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Describe(System.Text.StringBuilder)">
+            <summary>
+            Overridden by subclasses to build a ToString chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.EqualsTo(x2.Cell)">
+            <summary>
+            Overridden by subclasses to build an equality test chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetHashCode">
+            <summary>
+            Returns the hash code for the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetHashCode(x2.Fingerprint,System.Int32)">
+            <summary>
+            Returns the hash code for this event based on the specified
+            fingerprint, assuming the given type identifier.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetHashCode(x2.Fingerprint)">
+            <summary>
+            Overridden by subclasses to build a hash code generator chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetTypeId">
+            <summary>
+            Returns the type identifier of this event.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:x2.Event.GetTypeTag">
+            <summary>
+            Returns the custom type tag of this event.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetFactoryMethod">
+            <summary>
+            Returns the factory method delegate that can create an instance of
+            this event.
+            </summary>
+        </member>
+        <member name="M:x2.Event.IsEquivalent(x2.Cell,x2.Fingerprint)">
+            <summary>
+            Overridden by subclasses to build an equivalence test chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Deserialize(x2.Deserializer)">
+            <summary>
+            Overridden by subclasses to build a deserialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Deserialize(x2.VerboseDeserializer)">
+            <summary>
+            Overridden by subclasses to build a verbose deserialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.GetLength(System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build an encoded length computation chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Serialize(x2.Serializer,System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build a serialization chain.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Serialize(x2.VerboseSerializer,System.Type,System.Boolean@)">
+            <summary>
+            Overridden by subclasses to build a verbose serialization chain.
+            </summary>
+        </member>
+        <member name="T:x2.Event.Tag">
+            <summary>
+            Supports light-weight custom type hierarchy for Event and its subclasses.
+            </summary>
+        </member>
+        <member name="P:x2.Event.Tag.TypeId">
+            <summary>
+            Gets the type identifier of this event type.
+            </summary>
+        </member>
+        <member name="M:x2.Event.Tag.#ctor(x2.Event.Tag,System.Type,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the Event.Tag class.
+            </summary>
+        </member>
+        <member name="T:x2.EventEquivalent">
+            <summary>
+            An event proxy to support hash table matching based on equivalence.
+            </summary>
+        </member>
+        <member name="T:x2.EventSink">
+             <summary>
+             Cleanup helper base class for any event-consuming classes.
+             </summary>
+             <remarks>
+             x2 event handlers are built on C# delegates. In case of an instance
+             method delegate, it keeps a strong reference to the method target object.
+             This means that when you bind an event with an instance method, the
+             target object will never be garbage-collected as long as the handler
+             delegate lives, resulting in undesirable memory leak.
+            
+             EventSink is here to handle the case. First, let your event-consuming
+             class be derived from EventSink. When the object is no longer needed,
+             explicitly call its Dispose() method to ensure that all the event
+             bindings to the object are removed so that the object is properly
+             garbage-collected.
+            
+             An EventSink object should be initialized with a single specific flow.
+             And an object instance of any EventSink-derived class should never be
+             shared by two or more different flows. These are constraints by design.
+             </remarks>
+        </member>
+        <member name="P:x2.EventSink.Flow">
+            <summary>
+            Gets or sets the flow which this EventSink belongs to.
+            </summary>
+        </member>
+        <member name="M:x2.EventSink.#ctor">
+            <summary>
+            Initializes a new instance of the EventSink class with the flow that
+            runs the current thread.
+            </summary>
+        </member>
+        <member name="M:x2.EventSink.#ctor(x2.Flow)">
+            <summary>
+            Initializes a new instance of the EventSink class with the specified
+            flow.
+            </summary>
+        </member>
+        <member name="M:x2.EventSink.Dispose">
+            <summary>
+            Releases all the handler bindings associated with this EventSink.
+            </summary>
+        </member>
+        <member name="M:x2.EventSink.Dispose(System.Boolean)">
+            <summary>
+            Frees managed or unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:x2.Fingerprint">
+            <summary>
+            Manages a fixed-length compact array of bit values.
+            index ranges over from 0 to length - 1.
+            </summary>
+        </member>
+        <member name="P:x2.Fingerprint.Length">
+            <summary>
+            Gets the number of bits contained in this Fingerprint.
+            </summary>
+        </member>
+        <member name="P:x2.Fingerprint.LengthInBytes">
+            <summary>
+            Gets the minimum number of bytes required to hold all the bits in
+            this Fingerprint.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the Fingerprint class that can hold
+            the specified number of bit values, which are initially set to
+            <b>false</b>.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.#ctor(x2.Fingerprint)">
+            <summary>
+            Initializes a new instance of the Fingerprint class that contains
+            bit values copied from the specified Fingerprint.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.Clear">
+            <summary>
+            Clears all the bits in the Fingerprint, setting them as <b>false</b>.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.CompareTo(x2.Fingerprint)">
+            <summary>
+            Compares this Fingerprint with the specified Fingerprint object.
+            </summary>
+            Implements IComparable(T).CompareTo interface.
+        </member>
+        <member name="M:x2.Fingerprint.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.GetHashCode">
+            <summary>
+            Returns the hash code for the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.Equivalent(x2.Fingerprint)">
+            <summary>
+            Determines whether the specified Fingerprint object is equivalent to 
+            this one.
+            </summary>
+            A Fingerprint is said to be equivalent to the other when it covers
+            all the bits set in the other.
+            <remarks>
+            Given two Fingerprint objects x and y, x.Equivalent(y) returns
+            <b>true</b> if:
+              <list type="bullet">
+                <item>y.Length is greater than or equal to x.Length</item>
+                <item>All the bits set in x are also set in y</item>
+              </list>
+            </remarks>
+        </member>
+        <member name="M:x2.Fingerprint.Get(System.Int32)">
+            <summary>
+            Gets the bit value at the specified index.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.Touch(System.Int32)">
+            <summary>
+            Sets the bit at the specified index.
+            </summary>
+        </member>
+        <member name="M:x2.Fingerprint.Wipe(System.Int32)">
+            <summary>
+            Clears the bit at the specified index.
+            </summary>
+        </member>
+        <member name="P:x2.Fingerprint.Item(System.Int32)">
+            <summary>
+            Gets the bit value at the specified index.
+            </summary>
+        </member>
+        <member name="T:x2.Flow">
+            <summary>
+            Represents a logically independent execution flow.
+            </summary>
+        </member>
+        <member name="P:x2.Flow.CurrentFlow">
+            <summary>
+            Gets or sets the current flow in which the current thread is running.
+            </summary>
+        </member>
+        <member name="P:x2.Flow.DefaultExceptionHandler">
+            <summary>
+            Gets or sets the default exception handler for all flows.
+            </summary>
+        </member>
+        <member name="P:x2.Flow.ExceptionHandler">
+            <summary>
+            Gets or sets the exception handler for this flow.
+            </summary>
+        </member>
+        <member name="P:x2.Flow.Name">
+            <summary>
+            Gets the name of this flow.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.OnException(System.String,System.Exception)">
+            <summary>
+            Default exception handler.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.Add(x2.ICase)">
+            <summary>
+            Adds the specified case to this flow.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.Remove(x2.ICase)">
+            <summary>
+            Removes the specified case from this flow.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.SubscribeTo(System.String)">
+            <summary>
+            Makes this flow subscribe to the specified channel.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.UnsubscribeFrom(System.String)">
+            <summary>
+            Makes this flow unsubscribe from the specified channel.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.AddChannelRef">
+            <summary>
+            Increments the channel reference count by one and returns the result.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.RemoveChannelRef">
+            <summary>
+            Decrements the channel reference count by one and returns the result.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.ResetChannelRef">
+            <summary>
+            Resets the channel reference count as zero.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.Dispatch(x2.Event)">
+            <summary>
+            Called internally to dspatch the specified event to registered handlers.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.Setup">
+            <summary>
+            Overridden by subclasses to build a startup handler chain.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.SetupInternal">
+            <summary>
+            Called internally when this flow starts up.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.Teardown">
+            <summary>
+            Overridden by subclasses to build a shutdown handler chain.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.TeardownInternal">
+            <summary>
+            Called internally when this flow shuts down.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.OnHeartbeat">
+            <summary>
+            Overridden by subclasses to build a HeartbeatEvent handler chain.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.OnStart">
+            <summary>
+            Overridden by subclasses to build a FlowStart event handler chain.
+            </summary>
+        </member>
+        <member name="M:x2.Flow.OnStop">
+            <summary>
+            Overridden by subclasses to build a FlowStop event handler chain.
+            </summary>
+        </member>
+        <member name="M:x2.ThreadlessFlow`1.Wait``1(``0,``0@,System.Double)">
+            <summary>
+            Wait for a single event of type (T) with timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.ThreadlessFlow`1.Wait``1(``0,``0@,System.TimeSpan)">
+            <summary>
+            Wait for a single event of type (T) with timeout.
+            </summary>
+        </member>
+        <member name="M:x2.ThreadlessFlow`1.Wait(System.Double,x2.Event[]@,x2.Event[])">
+            <summary>
+            Wait for multiple events with timeout in seconds.
+            </summary>
+        </member>
+        <member name="M:x2.ThreadlessFlow`1.Wait(System.TimeSpan,x2.Event[]@,x2.Event[])">
+            <summary>
+            Wait for multiple events with timeout.
+            </summary>
+        </member>
+        <member name="T:x2.Handler">
+            <summary>
+            Abstract base class for concrete event handlers.
+            </summary>
+        </member>
+        <member name="P:x2.Handler.Action">
+            <summary>
+            Gets the underlying delegate of this handler.
+            </summary>
+        </member>
+        <member name="M:x2.Handler.Equals(System.Object)">
+            <summary>
+            Determines whether the specified object is equal to the current
+            object.
+            </summary>
+        </member>
+        <member name="M:x2.Handler.GetHashCode">
+            <summary>
+            Returns the hash code for the current object.
+            </summary>
+        </member>
+        <member name="M:x2.Handler.Invoke(x2.Event)">
+            <summary>
+            Invokes the underlying delegate of this handler with the specified
+            event.
+            </summary>
+        </member>
+        <member name="T:x2.MethodHandler`1">
+            <summary>
+            Represents a generic method handler.
+            </summary>
+        </member>
+        <member name="T:x2.CoroutineHandler`1">
+            <summary>
+            Represents a coroutine method handler.
+            </summary>
+        </member>
+        <member name="T:x2.ConditionalMethodHandler`1">
+            <summary>
+            Represents a conditional generic method handler.
+            </summary>
+        </member>
+        <member name="T:x2.ConditionalCoroutineHandler`1">
+            <summary>
+            Represents a conditional coroutine method handler.
+            </summary>
+        </member>
+        <member name="T:x2.Hub">
+            <summary>
+            Represents the singleton event distribution bus.
+            </summary>
+        </member>
+        <member name="P:x2.Hub.HeartbeatEvent">
+            <summary>
+            Gets the x2 subsystem heartbeat event.
+            </summary>
+        </member>
+        <member name="P:x2.Hub.Instance">
+            <summary>
+            Gets the singleton instance of the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Attach(x2.Flow)">
+            <summary>
+            Attaches the specified flow to the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Detach(x2.Flow)">
+            <summary>
+            Detaches the specified flow from the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.DetachAll">
+            <summary>
+            Detaches all the attached flows.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Post(x2.Event)">
+            <summary>
+            Posts up the specified event to the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Startup">
+            <summary>
+            Starts all the flows attached to the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Shutdown">
+            <summary>
+            Stops all the flows attached to the hub.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Subscribe(x2.Flow,System.String)">
+            <summary>
+            Makes the given attached flow subscribe to the specified channel.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Unsubscribe(x2.Flow,System.String)">
+            <summary>
+            Makes the given attached flow unsubscribe from the specified channel.
+            </summary>
+        </member>
+        <member name="T:x2.Hub.Flows">
+            <summary>
+            Represents the set of attached flows for convenient cleanup.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Flows.Dispose">
+            <summary>
+            Implements the IDisposable interface.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Flows.Startup">
+            <summary>
+            Starts all the attached flows.
+            </summary>
+        </member>
+        <member name="M:x2.Hub.Flows.Shutdown">
+            <summary>
+            Stops all the attached flows.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForSingleEvent">
+            <summary>
+            YieldInstruction that waits for a single event.
+            </summary>
+        </member>
+        <member name="T:x2.WaitForSingleResponse">
+            <summary>
+            YieldInstruction that posts a request and waits for a single response.
+            </summary>
+        </member>
+    </members>
+</doc>
